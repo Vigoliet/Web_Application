@@ -16,23 +16,37 @@ console.log('hey hey from client');
             const data = req.response;
             console.log(data);
 
-            const headline = data['headline'];
-            const intro = data['intro'];
+            //Data
+            const headline = data['headline']; //data from json
+            const intro = data['intro'];       //data from json
             
-            
+            //Elements
             const img = document.createElement('img');
             const p1 = document.createElement('p');
             const h1 = document.createElement('h1');
+            const button = document.createElement('button');
 
             img.src = data['articleimage']; 
             
             p1.textContent = intro;
             h1.textContent = headline;
-            
-            
+            button.textContent = "hide";
+
+            function myFunction() {
+                var x = document.getElementById("Exercise1");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              }
+              button.onclick = myFunction;
+
+            document.getElementById('Exercise3').appendChild(button);      
             document.getElementById('Exercise1').appendChild(h1);
             document.getElementById('Exercise1').appendChild(p1);  
             document.getElementById('Exercise1').appendChild(img);
+            
             
         };
 
