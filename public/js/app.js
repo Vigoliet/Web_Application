@@ -33,6 +33,7 @@ console.log('hey hey from client');
             document.getElementById('Exercise1').appendChild(h1);
             document.getElementById('Exercise1').appendChild(p1);  
             document.getElementById('Exercise1').appendChild(img);
+            
         };
 
 
