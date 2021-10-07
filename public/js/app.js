@@ -18,15 +18,21 @@ console.log('hey hey from client');
 
             const headline = data['headline'];
             const intro = data['intro'];
-
+            
+            
+            const img = document.createElement('img');
             const p1 = document.createElement('p');
             const h1 = document.createElement('h1');
+
+            img.src = data['articleimage']; 
             
             p1.textContent = intro;
             h1.textContent = headline;
-
+            
+            
             document.getElementById('Exercise1').appendChild(h1);
             document.getElementById('Exercise1').appendChild(p1);  
+            document.getElementById('Exercise1').appendChild(img);
         };
 
 
