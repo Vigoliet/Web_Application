@@ -26,6 +26,7 @@ console.log('hey hey from client');
             const h1 = document.createElement('h1');
             const button = document.createElement('button');
 
+            //Only works after creating the element
             img.src = data['articleimage']; 
             
             p1.textContent = intro;
@@ -36,8 +37,10 @@ console.log('hey hey from client');
                 var x = document.getElementById("Exercise1");
                 if (x.style.display === "none") {
                   x.style.display = "block";
+                  button.textContent = "hide";
                 } else {
                   x.style.display = "none";
+                  button.textContent = "unhide";
                 }
               }
               button.onclick = myFunction;
@@ -47,7 +50,7 @@ console.log('hey hey from client');
             document.getElementById('Exercise1').appendChild(p1);  
             document.getElementById('Exercise1').appendChild(img);
             
-            
+   
         };
 
 
