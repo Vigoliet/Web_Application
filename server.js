@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 8042;
 const indexRouter = require('./routes/index');
 
+app.use(express.urlencoded());
 
 app.use(express.static('public'));
 
