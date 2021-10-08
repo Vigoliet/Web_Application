@@ -34,7 +34,7 @@ console.log('hey hey from client');
             button.textContent = "hide";
 
             function myFunction() {
-                var x = document.getElementById("Exercise1");
+                var x = document.getElementById("Exercise2");
                 if (x.style.display === "none") {
                   x.style.display = "block";
                   button.textContent = "hide";
@@ -48,7 +48,7 @@ console.log('hey hey from client');
             document.getElementById('Exercise3').appendChild(button);      
             document.getElementById('Exercise1').appendChild(h1);
             document.getElementById('Exercise1').appendChild(p1);  
-            document.getElementById('Exercise1').appendChild(img);
+            document.getElementById('Exercise2').appendChild(img);
             
    
         };
