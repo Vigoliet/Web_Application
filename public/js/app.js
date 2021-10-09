@@ -16,10 +16,14 @@ console.log('hey hey from client');
             const data = req.response;
             console.log(data);
 
-            //Data
-            const headline = data['headline']; //data from json
-            const intro = data['intro'];       //data from json
+            //DATA
             
+            //const headline = data['headline']; //data from json
+            //const intro = data['intro'];       //data from json
+            //can also call the attribute data directly by doing 
+            //p1.textContent = data.intro instead of setting a const up for data.
+
+
             //Elements
             const img = document.createElement('img');
             const p1 = document.createElement('p');
@@ -27,13 +31,18 @@ console.log('hey hey from client');
             const button = document.createElement('button');
 
             //Only works after creating the element
-            img.src = data['articleimage']; 
+            //img.src = data['articleimage']; didn't work and gave undefined
+            img.setAttribute('src', data.articleImage);
             
-            p1.textContent = intro;
-            h1.textContent = headline;
+            //can also call the attribute data directly by doing 
+            //p1.textContent = data.intro instead of seting a const up at data.
+            p1.textContent = data.intro; 
+            h1.textContent = data.headline;
             button.textContent = "hide";
 
-            function myFunction() {
+            //can also use: button.addEventListener('click', Button1Handler);
+            button.onclick = Button1Handler; //Button for hiding image.
+            function Button1Handler() {
                 var x = document.getElementById("Exercise2");
                 if (x.style.display === "none") {
                   x.style.display = "block";
@@ -43,7 +52,7 @@ console.log('hey hey from client');
                   button.textContent = "unhide";
                 }
               }
-              button.onclick = myFunction;
+              
 
             document.getElementById('Exercise3').appendChild(button);      
             document.getElementById('Exercise1').appendChild(h1);
